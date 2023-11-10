@@ -111,9 +111,9 @@ curl localhost
 DISCORD="https://discord.com/api/webhooks/1169002249939329156/7MOorDwzym-yBUs3gp0k5q7HyA42M5eYjfjpZgEwmAx1vVVcLgnlSh4TmtqZqCtbupov"
 
 # Obtiene el nombre del repositorio
-REPO_NAME=" BootCamp-DevOps-roxsross($(basename $(git rev-parse --show-toplevel)))"
+REPO_NAME=$(basename $(git rev-parse --show-toplevel))
 # Obtiene la URL remota del repositorio
-REPO_URL=$(git remote get-url origin)
+REPO_URL="Repositorio: (BootCamp-DevOps-roxsross: $(git remote get-url origin))"
 WEB_URL="localhost"
 # Realiza una solicitud HTTP GET a la URL
 HTTP_STATUS=$(curl -Is "$WEB_URL" | head -n 1)
