@@ -76,14 +76,13 @@ echo "====================================="
 
 ##### Stage 2 #####
 
-MAIN="/root/BootCamp-DevOps-roxsross"
 REPO="bootcamp-devops-2023"
 BRANCH="clase2-linux-bash"
 APP="app-295devops-travel"
 
 # Test de Repo
-if test -d "$MAIN/$REPO"; then
-    cd $MAIN/$REPO
+if test -d "$REPO"; then
+    cd $REPO
     git pull
 else
     sleep 1
@@ -93,8 +92,7 @@ else
 fi
 
 # Copiando archivos
-cd $MAIN
-cp -r /$MAIN/$REPO/$APP/* /var/www/html
+cp -r /$REPO/$APP/* /var/www/html
 # Test de codigo
 if test -f "/var/www/html/index.php"; then 
     echo "  "
